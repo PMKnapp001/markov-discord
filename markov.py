@@ -97,5 +97,5 @@ async def on_message(message):
     elif markov_bot_client.user.mentioned_in(message):
         markov_response = make_text(chains)
         await message.channel.send(markov_response)
-
+        
 markov_bot_client.run(os.environ['DISCORD_TOKEN'])
