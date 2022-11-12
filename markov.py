@@ -92,7 +92,9 @@ async def on_message(message):
         markov_response = make_text(chains)
         await message.channel.send(markov_response)
     
-    if markov_bot_client.user.mentioned_in(message):
+    #referred to stackoverflow post for guidance. 
+    #https://stackoverflow.com/questions/62239816/how-do-i-make-the-bot-respond-when-someone-mentions-it-discord-py
+    elif markov_bot_client.user.mentioned_in(message):
         markov_response = make_text(chains)
         await message.channel.send(markov_response)
 
